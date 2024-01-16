@@ -4,6 +4,7 @@ import sys
 def main():
    print("Hello World")
    api_url="http://localhost:8082/doc/demo/create/pkpzip"
+   print(api_url)
    repo_name = sys.argv[1]
    json_file_path = sys.argv[2]
    # repo_name=os.getenv("INPUT_REPO_NAME")
