@@ -18,7 +18,7 @@ jobs:
       - name: Extract repository name and JSON file path
         id: read
         run: >
-          repo_name= 'actiondemo'
+          repo_name= $(basename "$(pwd)")
 
           json_file_path=$(git diff --name-only ${{ github.sha }} | grep '.json'
           | head -n 1)
