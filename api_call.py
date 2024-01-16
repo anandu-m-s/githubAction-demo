@@ -1,6 +1,7 @@
 import requests
 import os
 def main():
+   print("Hello World")
    api_url="http://localhost:8082/doc/demo/create/pkpzip"
    repo_name=os.getenv("INPUT_REPO_NAME")
    json_file_path=os.getenv("INPUT_JSON_FILE_PATH")
