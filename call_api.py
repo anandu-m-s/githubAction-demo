@@ -15,7 +15,7 @@ def main():
 #     data=file
 #   )
 
-print(api_url)
+print("http://localhost:8082/doc/demo/create/pkpzip")
 
 if __name__ == "__main__":
   main()
