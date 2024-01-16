@@ -1,0 +1,32 @@
+name: Call API on New Repo
+'on':
+  push:
+    paths:
+      - '**/*.json'
+jobs:
+  call-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: pip install requests
+      - name: Extract repository name and JSON file path
+        run: >
+          repo_name=$(basename "$(pwd)")
+
+          json_file_path=$(git diff --name-only ${{ github.sha }} | grep '.json'
+          | head -n 1)
+
+          echo "::set-output name=repo_name::$repo_name"
+
+          echo "::set-output name=json_file_path::$json_file_path"
+      - name: Call Python script
+        run: python call_api.py
+        env:
+          INPUT_REPO_NAME: '${{ steps.extract.outputs.repo_name }}'
+          INPUT_JSON_FILE_PATH: '${{ steps.extract.outputs.json_file_path }}'
