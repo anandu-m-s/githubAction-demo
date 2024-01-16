@@ -26,7 +26,4 @@ jobs:
 
           echo "::set-output name=json_file_path::$json_file_path"
       - name: Call Python script
-        run: python call_api.py
-        env:
-          INPUT_REPO_NAME: '${{ steps.extract.outputs.repo_name }}'
-          INPUT_JSON_FILE_PATH: '${{ steps.extract.outputs.json_file_path }}'
+        run: python call_api.py "${{ steps.extract.outputs.repo_name}}" "${{ steps.extract.outputs.json_file_path }}"
