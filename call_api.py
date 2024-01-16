@@ -15,7 +15,7 @@ def main():
 #     data=file
 #   )
 
-print(repo_name.text)
+print(api_url)
 
 if __name__ == "__main__":
   main()
