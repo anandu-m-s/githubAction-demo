@@ -1,0 +1,14 @@
+{
+    "pkp-id":"sample-pkp",
+    "title":"test",
+    "description":"demo json",
+    "scope":{
+        "documents":{
+            "id-list-filter":[
+                "a00041528en_us",
+                "a00041529en_us",
+                "a00029530en_us"
+            ]
+        }
+    }
+}
