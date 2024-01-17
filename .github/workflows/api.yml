@@ -21,7 +21,7 @@ jobs:
           json_file_path=$(git show --name-only ${{ github.sha }} | grep
           '.json')
 
-          echo "::set-output name=json_file_path::$json_file_path" >> "$action_state"
+          echo "$json_file_path" >> "$action_state"
       - name: Use the value
         id: step_two
         run: |
