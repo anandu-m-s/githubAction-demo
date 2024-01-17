@@ -20,7 +20,7 @@ jobs:
 
           json_file_path=$(git show --name-only ${{ github.sha }} | grep '.json')
 
-          echo "::set-output name=json_file_path::$json_file_path" >> $GITHUB_ENV
+          echo "::set-output name=json_file_path::$json_file_path" >> filewithjson
       - name: Call Python script
         run: python call_api.py
         env:
