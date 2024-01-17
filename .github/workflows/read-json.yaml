@@ -1,0 +1,20 @@
+# githubAction-demo/.github/workflows/read-json.yml
+
+name: Process JSON
+
+on:
+  repository_dispatch:
+    types: [update-json]
+
+jobs:
+  process-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Print JSON Content
+        run: |
+          echo "Received JSON File:"
+          cat ${{ github.event.client_payload.json_file }}
