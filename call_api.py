@@ -9,6 +9,7 @@ def main():
    # json_file_path = sys.argv[2]
    repo_name=os.getenv("INPUT_REPO_NAME")
    json_file_path=os.getenv("INPUT_JSON_FILE_PATH")
+   print(api_url)
    print(repo_name)
    print(json_file_path)
 
@@ -18,8 +19,6 @@ def main():
 #     headers={"Content-Type":"application/json"},
 #     data=file
 #   )
-
-print("http://localhost:8082/doc/demo/create/pkpzip")
 
 if __name__ == "__main__":
   main()
