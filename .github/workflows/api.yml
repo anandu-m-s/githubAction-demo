@@ -18,9 +18,14 @@ jobs:
       - name: Extract JSON file path
         run: >
 
-          json_file_path=$(git show --name-only ${{ github.sha }} | grep '.json')
+          json_file_path=$(git show --name-only ${{ github.sha }} | grep
+          '.json')
 
-          echo "::set-output name=json_file_path::$json_file_path" >> filewithjson
+          echo "::set-output name=json_file_path::$json_file_path" >> "$action_state"
+      - name: Use the value
+        id: step_two
+        run: |
+          printf '%s\n' "$action_state" # This will output 'yellow'
       - name: Call Python script
         run: python call_api.py
         env:
