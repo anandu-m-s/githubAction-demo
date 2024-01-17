@@ -28,5 +28,5 @@ jobs:
       - name: Call Python script
         run: python call_api.py
         env:
-          INPUT_REPO_NAME: '${{ steps.extract.outputs.repo_name }}'
-          INPUT_JSON_FILE_PATH: '${{ steps.extract.outputs.json_file_path }}'
+          INPUT_REPO_NAME: '${{ steps.outputs.repo_name }}'
+          INPUT_JSON_FILE_PATH: '${{ steps.outputs.json_file_path }}'
