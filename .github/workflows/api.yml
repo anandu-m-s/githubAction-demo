@@ -16,7 +16,6 @@ jobs:
       - name: Install dependencies
         run: pip install requests
       - name: Extract repository name and JSON file path
-        id: read
         run: >
 
           json_file_path=$(git diff --name-only ${{ github.sha }} | grep '.json'
@@ -26,5 +25,5 @@ jobs:
       - name: Call Python script
         run: python call_api.py
         env:
-          INPUT_REPO_NAME: '${{ steps.read.outputs.repo }}'
+          INPUT_REPO_NAME: '${{ steps.outputs.repo }}'
           INPUT_JSON_FILE_PATH: '${{ steps.outputs.json_file_path }}'
