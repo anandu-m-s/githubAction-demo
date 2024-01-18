@@ -18,7 +18,7 @@ def main():
    # url="http://127.0.0.1:8082/doc/demo/get"
    url="https://jsonplaceholder.typicode.com/todos"
    r= requests.get(url)
-   print(r)
+   print(r.json())
 
 if __name__ == "__main__":
   main()
