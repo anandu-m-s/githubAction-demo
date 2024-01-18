@@ -15,7 +15,8 @@ def main():
    #   headers={"Content-Type":"application/json"},
    #   data=file
    # )
-   url="http://127.0.0.1:8082/doc/demo/get"
+   # url="http://127.0.0.1:8082/doc/demo/get"
+   url="https://jsonplaceholder.typicode.com/todos"
    r= requests.get(url)
    print(r)
 
