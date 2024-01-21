@@ -1,20 +1,20 @@
-# githubAction-demo/.github/workflows/read-json.yml
-
-name: Process JSON
+name: Reusable Workflow
 
 on:
-  repository_dispatch:
-    types: [update-json]
+  workflow_call:
+    inputs:
+      json-file-path:
+        description: 'Path to the JSON file'
+        required: true
 
 jobs:
   process-json:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
+      - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Print JSON Content
+      - name: Process JSON
         run: |
-          echo "Received JSON File:"
-          cat ${{ github.event.client_payload.json_file }}
+          echo "Processing JSON file at ${{ github.event.inputs.json-file-path }}"
+          # Add your logic here to process the JSON file
