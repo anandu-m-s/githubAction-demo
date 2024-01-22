@@ -15,6 +15,7 @@ jobs:
           python-version: 3.8
       - name: Install dependencies
         run: pip install requests
+<<<<<<< HEAD
       - name: Extract JSON file path
         id: step_one
         run: >
@@ -23,3 +24,20 @@ jobs:
          INPUT_JSON_FILE_PATH: '${{steps.step_one.outputs.json_file_path}}'
       - name: Call Python script
         run: python call_api.py
+=======
+      - name: Extract repository name and JSON file path
+        run: >
+          repo_name=$(basename "$(pwd)")
+
+          json_file_path=$(git show --name-only ${{ github.sha }} | grep '.json'
+          | head -n 1)
+
+          echo "::set-output name=repo_name::$repo_name"
+
+          echo "::set-output name=json_file_path::$json_file_path"
+      - name: Call Python script
+        run: python call_api.py
+        env:
+          INPUT_REPO_NAME: '${{ steps.extract.outputs.repo_name }}'
+          INPUT_JSON_FILE_PATH: '${{ steps.extract.outputs.json_file_path }}'
+>>>>>>> 906a06d9ef028063fc7c3f3f1147344c70d3d3c7
