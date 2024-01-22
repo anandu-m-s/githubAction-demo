@@ -16,17 +16,10 @@ jobs:
       - name: Install dependencies
         run: pip install requests
       - name: Extract JSON file path
+        id: step_one
         run: >
-
-          json_file_path=$(git show --name-only ${{ github.sha }} | grep
-          '.json')
-
-          echo json_file_path
-      - name: Use the value
-        id: step_two
-        run: |
-          printf '%s\n' "$action_state" # This will output 'yellow'
+         json_file_path=$(git diff --name-only ${{ github.sha }} | grep '.json') 
+        env:
+         INPUT_JSON_FILE_PATH: '${{steps.step_one.outputs.json_file_path}}'
       - name: Call Python script
         run: python call_api.py
-        env:
-          INPUT_JSON_FILE_PATH: '${{ steps.outputs.json_file_path }}'
