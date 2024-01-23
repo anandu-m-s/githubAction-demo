@@ -1,0 +1,9 @@
+name: call reusable workflow and call python script
+
+on:
+ workflow_dispatch:
+jobs:
+  job1:
+   uses: anandu-m-s/reusableWorkflow/.github/workflows/reusableWithPythonScript.yaml@main
+
+
