@@ -6,6 +6,6 @@ jobs:
   job1:
    uses: anandu-m-s/reusableWorkflow/.github/workflows/reusableWithPythonScript.yaml@main
    with: 
-    file_path: anandu-ms/reusableWorkflow/test.py@main
+    file_path: anandu-ms/reusableWorkflow/call_test.py@main
 
 
