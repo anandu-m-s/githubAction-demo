@@ -1,9 +1,9 @@
-name: call reusable workflow with python artifact
+name: call reusable workflow with python artifact with new branch
 
 on:
  workflow_dispatch:
 jobs:
   job1:
-   uses: anandu-m-s/reusableWorkflow/.github/workflows/newReusableWithPythonRead.yaml@main
+   uses: anandu-m-s/reusableWorkflow/.github/workflows/newReusableWithPythonRead.yaml@test-demo
 
 
