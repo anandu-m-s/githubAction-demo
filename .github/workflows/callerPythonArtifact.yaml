@@ -1,4 +1,4 @@
-name: call reusable workflow with python artifact with new branch
+name: reusable workflow with python artifact with new test branch
 
 on:
  workflow_dispatch:
