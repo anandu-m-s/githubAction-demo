@@ -1,0 +1,7 @@
+name: test caller
+
+on:
+  workflow_dispatch:
+jobs:
+  caller_job:
+    uses: TS-RnD/km-doc-actions/.github/workflows/pkp-publish.yml@PI34_thor_pkp_workflow
