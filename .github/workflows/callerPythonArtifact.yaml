@@ -4,6 +4,6 @@ on:
  workflow_dispatch:
 jobs:
   job1:
-   uses: anandu-m-s/reusableWorkflow/.github/workflows/newReusableWithPythonRead.yaml@main
+   uses: anandu-m-s/reusableWorkflow/.github/workflows/newReusableWithPythonRead.yaml@reusable-branch-v1
 
 
