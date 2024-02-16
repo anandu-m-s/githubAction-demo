@@ -1,0 +1,9 @@
+name: test secrets caller workflow
+
+on:
+ workflow_dispatch:
+jobs:
+  secrets_check:
+   uses: anandu-m-s/reusableWorkflow/.github/workflows/demoReusable.yml@main
+
+
