@@ -5,5 +5,7 @@ on:
 jobs:
   job1:
    uses: anandu-m-s/reusableWorkflow/.github/workflows/newReusableWithPythonRead.yaml@main
+   with: 
+    file_path: pkp.json
 
 
