@@ -1,0 +1,10 @@
+name: New workflow test
+
+on:
+  workflow_dispatch:
+jobs:
+  testJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
