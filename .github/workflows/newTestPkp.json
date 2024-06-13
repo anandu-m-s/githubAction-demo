@@ -1,0 +1,18 @@
+{
+  "pkp-id": "new-test-pkp",
+  "title": "test",
+  "description": "test description",
+  "scope": {
+    "documents": {
+      "id-list-filter": [
+        "a00113947en_us",
+        "dp00004117en_us",
+        "a00041440en_us",
+        "sd00001273en_us",
+        "sg5024en_us",
+        "dp00003266fr_ca",
+        "a00099628en_us"
+      ]
+    }
+  }
+}
